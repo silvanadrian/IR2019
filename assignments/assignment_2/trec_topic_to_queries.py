@@ -2,14 +2,13 @@ import os
 import sys
 import re
 
-# make sure the argument is good (0 = the python file, 1 the actual argument)
 if len(sys.argv) < 2 or not os.path.isfile(sys.argv[1]):
-    print 'Trec topic file'
+    print('Trec topic file path')
     exit(0)
 
 cleanTextRegex = re.compile('[^a-zA-Z]')
 count = 0
-outFilepath = 'data/'+"queries.txt"
+outFilepath = "queries.txt"
 line_num = 0
 
 with open(outFilepath, 'w') as outputFile:
@@ -41,5 +40,5 @@ with open(outFilepath, 'w') as outputFile:
                 outputFile.write('\n')
                 count = count + 1
 
-print 'Completed all ', count, ' topics'
-print 'Saved in: ', outFilepath
+print('Completed all ', count, ' topics')
+print('Saved in: ', outFilepath)
